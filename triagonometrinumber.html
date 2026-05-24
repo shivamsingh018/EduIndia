@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Number System Notes</title>
+
+  <style>
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#f4f7fb;
+      margin:0;
+      padding:20px;
+      line-height:1.7;
+      color:#222;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      text-align:center;
+      color:#0b3d91;
+      margin-bottom:30px;
+    }
+
+    h2{
+      color:#0b5394;
+      margin-top:35px;
+      border-bottom:2px solid #0b5394;
+      padding-bottom:8px;
+    }
+
+    h3{
+      color:#1c4587;
+      margin-top:25px;
+    }
+
+    p{
+      font-size:16px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:15px;
+      margin-bottom:25px;
+    }
+
+    table th,
+    table td{
+      border:1px solid #ccc;
+      padding:12px;
+      text-align:center;
+    }
+
+    table th{
+      background:#0b5394;
+      color:white;
+    }
+
+    .formula{
+      background:#eef5ff;
+      padding:15px;
+      border-left:5px solid #0b5394;
+      margin:15px 0;
+      font-family:Courier New, monospace;
+    }
+
+    ul{
+      margin-top:10px;
+    }
+
+    li{
+      margin-bottom:8px;
+    }
+
+    .section{
+      margin-bottom:40px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Number System</h1>
+
+    <div class="section">
+
+      <h2>Definition</h2>
+
+      <p>
+        A <b>Number System</b> is a method of representing numbers using digits or symbols.
+        It defines how numbers are written and how mathematical operations are performed.
+      </p>
+
+      <p>
+        In computer science, number systems are important because computers understand data in binary form.
+      </p>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Types of Number System</h2>
+
+      <table>
+
+        <tr>
+          <th>Number System</th>
+          <th>Base (Radix)</th>
+          <th>Digits Used</th>
+        </tr>
+
+        <tr>
+          <td>Decimal</td>
+          <td>10</td>
+          <td>0 – 9</td>
+        </tr>
+
+        <tr>
+          <td>Binary</td>
+          <td>2</td>
+          <td>0, 1</td>
+        </tr>
+
+        <tr>
+          <td>Octal</td>
+          <td>8</td>
+          <td>0 – 7</td>
+        </tr>
+
+        <tr>
+          <td>Hexadecimal</td>
+          <td>16</td>
+          <td>0 – 9, A – F</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <div class="section">
+
+      <h2>1. Decimal Number System</h2>
+
+      <p>
+        The decimal number system uses 10 digits from 0 to 9.
+      </p>
+
+      <p><b>Base:</b> 10</p>
+
+      <h3>Example</h3>
+
+      <div class="formula">
+        (457)<sub>10</sub><br><br>
+
+        = (4 × 10²) + (5 × 10¹) + (7 × 10⁰)<br><br>
+
+        = 400 + 50 + 7<br><br>
+
+        = 457
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>2. Binary Number System</h2>
+
+      <p>
+        The binary number system uses only two digits: 0 and 1.
+      </p>
+
+      <p><b>Base:</b> 2</p>
+
+      <h3>Example</h3>
+
+      <div class="formula">
+        (1011)<sub>2</sub><br><br>
+
+        = (1 × 2³) + (0 × 2²) + (1 × 2¹) + (1 × 2⁰)<br><br>
+
+        = 8 + 0 + 2 + 1<br><br>
+
+        = 11<sub>10</sub>
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>3. Octal Number System</h2>
+
+      <p>
+        The octal number system uses digits from 0 to 7.
+      </p>
+
+      <p><b>Base:</b> 8</p>
+
+      <h3>Example</h3>
+
+      <div class="formula">
+        (725)<sub>8</sub><br><br>
+
+        = (7 × 8²) + (2 × 8¹) + (5 × 8⁰)<br><br>
+
+        = 448 + 16 + 5<br><br>
+
+        = 469<sub>10</sub>
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>4. Hexadecimal Number System</h2>
+
+      <p>
+        The hexadecimal number system uses digits from 0 to 9 and letters A to F.
+      </p>
+
+      <table>
+
+        <tr>
+          <th>Hex Digit</th>
+          <th>Decimal Value</th>
+        </tr>
+
+        <tr>
+          <td>A</td>
+          <td>10</td>
+        </tr>
+
+        <tr>
+          <td>B</td>
+          <td>11</td>
+        </tr>
+
+        <tr>
+          <td>C</td>
+          <td>12</td>
+        </tr>
+
+        <tr>
+          <td>D</td>
+          <td>13</td>
+        </tr>
+
+        <tr>
+          <td>E</td>
+          <td>14</td>
+        </tr>
+
+        <tr>
+          <td>F</td>
+          <td>15</td>
+        </tr>
+
+      </table>
+
+      <p><b>Base:</b> 16</p>
+
+      <h3>Example</h3>
+
+      <div class="formula">
+        (2AF)<sub>16</sub><br><br>
+
+        = (2 × 16²) + (10 × 16¹) + (15 × 16⁰)<br><br>
+
+        = 512 + 160 + 15<br><br>
+
+        = 687<sub>10</sub>
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Conversion of Number Systems</h2>
+
+      <h3>1. Decimal to Binary</h3>
+
+      <table>
+
+        <tr>
+          <th>Division</th>
+          <th>Quotient</th>
+          <th>Remainder</th>
+        </tr>
+
+        <tr>
+          <td>25 ÷ 2</td>
+          <td>12</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>12 ÷ 2</td>
+          <td>6</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>6 ÷ 2</td>
+          <td>3</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>3 ÷ 2</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>1 ÷ 2</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+
+      </table>
+
+      <div class="formula">
+        (25)<sub>10</sub> = (11001)<sub>2</sub>
+      </div>
+
+      <h3>2. Binary to Decimal</h3>
+
+      <div class="formula">
+        (10101)<sub>2</sub><br><br>
+
+        = (1 × 2⁴) + (0 × 2³) + (1 × 2²) + (0 × 2¹) + (1 × 2⁰)<br><br>
+
+        = 16 + 0 + 4 + 0 + 1<br><br>
+
+        = 21<sub>10</sub>
+      </div>
+
+      <h3>3. Decimal to Octal</h3>
+
+      <div class="formula">
+        (83)<sub>10</sub> = (123)<sub>8</sub>
+      </div>
+
+      <h3>4. Decimal to Hexadecimal</h3>
+
+      <div class="formula">
+        (254)<sub>10</sub> = (FE)<sub>16</sub>
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Binary Arithmetic</h2>
+
+      <h3>Binary Addition</h3>
+
+      <table>
+
+        <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>Sum</th>
+        </tr>
+
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>10</td>
+        </tr>
+
+      </table>
+
+      <div class="formula">
+        1010 + 1101 = 10111
+      </div>
+
+      <h3>Binary Subtraction</h3>
+
+      <div class="formula">
+        1101 - 1010 = 0011
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Complements</h2>
+
+      <h3>1's Complement</h3>
+
+      <p>
+        Change all 1s to 0s and all 0s to 1s.
+      </p>
+
+      <div class="formula">
+        1010 → 0101
+      </div>
+
+      <h3>2's Complement</h3>
+
+      <p>
+        Add 1 to the 1's complement.
+      </p>
+
+      <div class="formula">
+        1010 → 0101 → 0110
+      </div>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Applications of Number System</h2>
+
+      <ul>
+        <li>Used in computers and digital electronics</li>
+        <li>Used in memory addressing</li>
+        <li>Used in programming languages</li>
+        <li>Used in networking and communication</li>
+        <li>Used in arithmetic and logical operations</li>
+      </ul>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Advantages of Binary Number System</h2>
+
+      <ul>
+        <li>Easy implementation in digital circuits</li>
+        <li>Reliable and accurate</li>
+        <li>Simplifies computer design</li>
+        <li>Supports Boolean algebra operations</li>
+      </ul>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Important Points</h2>
+
+      <ul>
+        <li>Binary base = 2</li>
+        <li>Octal base = 8</li>
+        <li>Decimal base = 10</li>
+        <li>Hexadecimal base = 16</li>
+        <li>Hexadecimal uses digits A – F</li>
+        <li>Computers understand only binary numbers</li>
+      </ul>
+
+    </div>
+
+    <div class="section">
+
+      <h2>Conclusion</h2>
+
+      <p>
+        A number system is the foundation of computer science and digital electronics.
+        Different number systems such as binary, octal, decimal, and hexadecimal are
+        used for various purposes in computing and data representation.
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

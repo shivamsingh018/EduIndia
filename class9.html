@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduIndia - High School Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght phot;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Navbar Style */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff6b35;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        .back-btn {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .header-section h1 {
+            font-size: 36px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .header-section p {
+            color: #64748b;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+
+        /* Class Quick Navigation Tabs */
+        .class-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .class-nav-btn {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .class-nav-btn:hover {
+            border-color: #ff6b35;
+            color: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+        }
+
+        .class-block {
+            padding-top: 60px;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed #e2e8f0;
+            padding-bottom: 40px;
+        }
+
+        .class-block:last-child {
+            border-bottom: none;
+        }
+
+        .class-main-title {
+            font-size: 30px;
+            color: #0f172a;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .class-badge {
+            background-color: #ffe6dc;
+            color: #ff6b35;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #334155;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            height: 20px;
+            width: 4px;
+            background-color: #ff6b35;
+            border-radius: 2px;
+        }
+
+        /* Grid Layout for Subjects */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .subject-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .card-content {
+            margin-bottom: 20px;
+        }
+
+        .subject-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .subject-card h3 {
+            font-size: 22px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .subject-card p {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Topic Tags */
+        .topic-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .topic-tag {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .action-btn {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .action-btn:hover {
+            background-color: #ff6b35;
+        }
+
+        /* Extra Feature Banner */
+        .skill-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .skill-content h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .skill-content p {
+            color: #94a3b8;
+        }
+
+        .start-coding-btn {
+            background-color: #ff6b35;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .start-coding-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+            .skill-banner {
+                text-align: center;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="new.html" class="logo">🎓 EduIndia</a>
+        <div class="nav-links">
+            <a href="new.html" class="back-btn">← Back to Main</a>
+        </div>
+    </nav>
+
+    <header class="header-section">
+        <h1>High School Learning Hub</h1>
+        <p>Your comprehensive space for secondary and senior secondary mastery, technical thinking, and real-world skills.</p>
+        
+        <div class="class-navigation">
+            <a href="#class9" class="class-nav-btn">Class 9th</a>
+            <a href="#class10" class="class-nav-btn">Class 10th</a>
+            <a href="#class11" class="class-nav-btn">Class 11th</a>
+            <a href="#class12" class="class-nav-btn">Class 12th</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="class9" class="class-block">
+            <div class="class-main-title">
+                <h2>Secondary Foundation</h2>
+                <span class="class-badge">CLASS 09</span>
+            </div>
+
+            <h3 class="section-title">Core Academics</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">📐</div>
+                        <h3>Advanced Mathematics</h3>
+                        <p>Dive deep into real numbers, coordinate frameworks, and structural geometry theorems.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Number Systems</span>
+                            <span class="topic-tag">Polynomials</span>
+                            <span class="topic-tag">Euclid's Geometry</span>
+                            <span class="topic-tag">Probability</span>
+                        </div>
+                    </div>
+                    <a href="trigonometry.html" class="action-btn">Start Learning</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🧪</div>
+                        <h3>Integrated Science</h3>
+                        <p>Discover cellular organization, laws governing motion, and the true chemical nature of matter.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Matter in Surroundings</span>
+                            <span class="topic-tag">Cell: Life Unit</span>
+                            <span class="topic-tag">Laws of Motion</span>
+                            <span class="topic-tag">Gravitation</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Explore Modules</a>
+                </div>
+            </div>
+
+            <h3 class="section-title">Life Skills & Practical Arts</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🍳</div>
+                        <h3>Culinary Science & Baking</h3>
+                        <p>Understand heat transformations, kitchen resource mapping, and elementary baking skills.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Kitchen Safety</span>
+                            <span class="topic-tag">Baking Science</span>
+                            <span class="topic-tag">Recipe Math</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Enter Kitchen</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🎨</div>
+                        <h3>Design & Wood Crafting</h3>
+                        <p>Build basic structural models and learn spatial layouts through material arts.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">3D Crafting</span>
+                            <span class="topic-tag">Product Architecture</span>
+                            <span class="topic-tag">Upcycling</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Start Crafting</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="class10" class="class-block">
+            <div class="class-main-title">
+                <h2>Board Preparation & Logic</h2>
+                <span class="class-badge">CLASS 10</span>
+            </div>
+
+            <h3 class="section-title">Core Academics</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">📊</div>
+                        <h3>Mathematics & Trigonometry</h3>
+                        <p>Master quadratic expressions, trigonometric identities, and geometric proofs.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Quadratic Equations</span>
+                            <span class="topic-tag">Trigonometry</span>
+                            <span class="topic-tag">Triangles & Circles</span>
+                            <span class="topic-tag">Statistics</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Start Learning</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">⚡</div>
+                        <h3>Physics & Chemistry</h3>
+                        <p>Analyze electrical networks, light behaviors, and complex carbon-based molecules.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Chemical Reactions</span>
+                            <span class="topic-tag">Carbon Compounds</span>
+                            <span class="topic-tag">Electricity</span>
+                            <span class="topic-tag">Light Optics</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Explore Modules</a>
+                </div>
+            </div>
+
+            <div class="skill-banner">
+                <div class="skill-content">
+                    <h2>Level 2: Web Dev & JavaScript</h2>
+                    <p>Build dynamic user interfaces using HTML5, responsive CSS3 grids, and fundamental DOM logic manipulation.</p>
+                </div>
+                <a href="#" class="start-coding-btn">Open Web Lab</a>
+            </div>
+
+            <h3 class="section-title">Life Skills & Practical Arts</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">💰</div>
+                        <h3>Financial Planning & Budgeting</h3>
+                        <p>Understand banking systems, tax configurations, and early micro-savings habits.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Smart Budgeting</span>
+                            <span class="topic-tag">Banking 101</span>
+                            <span class="topic-tag">Tax Basics</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Manage Wealth</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🌐</div>
+                        <h3>Digital Ethics & Safety</h3>
+                        <p>Identify social vulnerabilities, safeguard identities, and practice clean online behavior.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Cyber Safety</span>
+                            <span class="topic-tag">Digital Footprint</span>
+                            <span class="topic-tag">Data Privacy</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Protect Identity</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="class11" class="class-block">
+            <div class="class-main-title">
+                <h2>Stream Specialization</h2>
+                <span class="class-badge">CLASS 11</span>
+            </div>
+
+            <h3 class="section-title">Core Stream Modules</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">📐</div>
+                        <h3>Higher Mathematics / Calculus</h3>
+                        <p>Explore set frameworks, relations, introductory calculus, and dimensional vectors.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Sets & Functions</span>
+                            <span class="topic-tag">Limits & Derivatives</span>
+                            <span class="topic-tag">Permutations</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Open Calculus</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">💼</div>
+                        <h3>Accountancy & Business</h3>
+                        <p>Deconstruct corporate recording mechanisms, asset distributions, and core macro economics.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Double Entry</span>
+                            <span class="topic-tag">Ledger Books</span>
+                            <span class="topic-tag">Business Orgs</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">View Ledgers</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🧬</div>
+                        <h3>Advanced Sciences (PCM/PCB)</h3>
+                        <p>Navigate mechanics, thermodynamic pathways, and systemic plant/animal physiology structures.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Thermodynamics</span>
+                            <span class="topic-tag">Organic Mechanics</span>
+                            <span class="topic-tag">Cellular Biology</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Explore Science</a>
+                </div>
+            </div>
+
+            <h3 class="section-title">Life Skills & Creative Expression</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🌱</div>
+                        <h3>Eco-Agro Systems</h3>
+                        <p>Study micro-environments, organic recycling methods, and sustainable hydroculture formats.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Hydroponics</span>
+                            <span class="topic-tag">Compost Networks</span>
+                            <span class="topic-tag">Soil Science</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Enter Eco-Lab</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🗣️</div>
+                        <h3>Public Speaking & Rhetoric</h3>
+                        <p>Develop communication mechanisms, debate formats, and professional presentation styles.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Voice Modulation</span>
+                            <span class="topic-tag">Debate Frameworks</span>
+                            <span class="topic-tag">Body Language</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Start Speaking</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="class12" class="class-block">
+            <div class="class-main-title">
+                <h2>Advanced Mastery & Career Prep</h2>
+                <span class="class-badge">CLASS 12</span>
+            </div>
+
+            <h3 class="section-title">Core Streams & Competitive Prep</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">📈</div>
+                        <h3>Macro Analysis & Calculus II</h3>
+                        <p>Master integrated calculus models, probability tables, and national economic equations.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Integrals</span>
+                            <span class="topic-tag">Differential Equations</span>
+                            <span class="topic-tag">National Income</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Start Intensive Practice</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🔬</div>
+                        <h3>Applied Sciences & Electrochemistry</h3>
+                        <p>Examine electrodynamic states, structural genetics, and advanced chemical kinetics.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Electrochemistry</span>
+                            <span class="topic-tag">Genetics</span>
+                            <span class="topic-tag">Wave Optics</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Run Simulations</a>
+                </div>
+            </div>
+
+            <div class="skill-banner">
+                <div class="skill-content">
+                    <h2>Level 3: AI, Data Science & Python Advanced</h2>
+                    <p>Build and validate predictions using structural datasets via Pandas, NumPy, and basic machine learning regressions.</p>
+                </div>
+                <a href="#" class="start-coding-btn">Launch Jupyter Notebook</a>
+            </div>
+
+            <h3 class="section-title">Life Skills & Career Launchpad</h3>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">📑</div>
+                        <h3>Career Planning & Resume Building</h3>
+                        <p>Learn to map out higher education tracks, assemble portfolios, and prepare for interviews.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Resume Architecture</span>
+                            <span class="topic-tag">Interview Logic</span>
+                            <span class="topic-tag">College Pathways</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Build Resume</a>
+                </div>
+
+                <div class="subject-card">
+                    <div class="card-content">
+                        <div class="subject-icon">🤝</div>
+                        <h3>Emotional Intelligence & Leadership</h3>
+                        <p>Build healthy conflict management tools, professional networking strategies, and team leadership skills.</p>
+                        <div class="topic-list">
+                            <span class="topic-tag">Stress Management</span>
+                            <span class="topic-tag">Conflict Resolution</span>
+                            <span class="topic-tag">Team Operations</span>
+                        </div>
+                    </div>
+                    <a href="#" class="action-btn">Explore Frameworks</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

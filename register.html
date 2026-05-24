@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EduIndia Registration</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(-45deg,#0056d2,#4f46e5,#00b4d8,#0077b6);
+      background-size:400% 400%;
+      animation:bg 10s ease infinite;
+      overflow:hidden;
+    }
+
+    @keyframes bg{
+
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+
+    }
+
+    /* Floating Circles */
+
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.1);
+      animation:float 7s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1){
+      width:150px;
+      height:150px;
+      top:10%;
+      left:8%;
+    }
+
+    .circle:nth-child(2){
+      width:220px;
+      height:220px;
+      bottom:10%;
+      right:10%;
+      animation-delay:2s;
+    }
+
+    .circle:nth-child(3){
+      width:100px;
+      height:100px;
+      top:70%;
+      left:25%;
+      animation-delay:4s;
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-20px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* Register Box */
+
+    .register-box{
+      width:450px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+      color:white;
+      animation:fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn{
+
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    .logo{
+      text-align:center;
+      font-size:55px;
+      margin-bottom:10px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:10px;
+      font-size:40px;
+    }
+
+    .subtitle{
+      text-align:center;
+      margin-bottom:30px;
+      color:#f1f1f1;
+    }
+
+    .input-box{
+      margin-bottom:18px;
+    }
+
+    .input-box label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+    }
+
+    .input-box input{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      outline:none;
+      font-size:16px;
+    }
+
+    .register-btn{
+      width:100%;
+      padding:15px;
+      margin-top:10px;
+      border:none;
+      border-radius:12px;
+      background:white;
+      color:#0056d2;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .register-btn:hover{
+      background:#dbeafe;
+      transform:scale(1.03);
+    }
+
+    .bottom-link{
+      margin-top:20px;
+      text-align:center;
+    }
+
+    .bottom-link a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .bottom-link a:hover{
+      text-decoration:underline;
+    }
+
+    @media(max-width:500px){
+
+      .register-box{
+        width:90%;
+        padding:30px;
+      }
+
+      h1{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Background -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Registration Box -->
+
+  <div class="register-box">
+
+    <div class="logo">🎓</div>
+
+    <h1>Create Account</h1>
+
+    <p class="subtitle">
+      Join EduIndia and start learning today
+    </p>
+
+    <form>
+
+      <div class="input-box">
+        <label>Full Name</label>
+
+        <input type="text" placeholder="Enter your full name">
+      </div>
+
+      <div class="input-box">
+        <label>Email Address</label>
+
+        <input type="email" placeholder="Enter your email">
+      </div>
+
+      <div class="input-box">
+        <label>Mobile Number</label>
+
+        <input type="tel" placeholder="Enter mobile number">
+      </div>
+
+      <div class="input-box">
+        <label>Password</label>
+
+        <input type="password" placeholder="Create password">
+      </div>
+
+      <div class="input-box">
+        <label>Confirm Password</label>
+
+        <input type="password" placeholder="Confirm password">
+      </div>
+
+      <button class="register-btn">
+        Register Now
+      </button>
+
+    </form>
+
+    <div class="bottom-link">
+      Already have an account?
+      <a href="Loginpage.html">Login</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

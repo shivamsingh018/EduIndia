@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EduIndia Login</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(-45deg,#0056d2,#4f46e5,#00b4d8,#0077b6);
+      background-size:400% 400%;
+      animation:gradientBG 10s ease infinite;
+      overflow:hidden;
+    }
+
+    @keyframes gradientBG{
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+    }
+
+    /* Floating Circles */
+
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.1);
+      animation:float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1){
+      width:120px;
+      height:120px;
+      top:10%;
+      left:10%;
+    }
+
+    .circle:nth-child(2){
+      width:200px;
+      height:200px;
+      bottom:10%;
+      right:10%;
+      animation-delay:2s;
+    }
+
+    .circle:nth-child(3){
+      width:80px;
+      height:80px;
+      bottom:20%;
+      left:20%;
+      animation-delay:4s;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-20px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* Login Box */
+
+    .login-box{
+      width:400px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+      text-align:center;
+      color:white;
+      animation:fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .login-box h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .login-box p{
+      margin-bottom:30px;
+      color:#f1f1f1;
+    }
+
+    .input-box{
+      margin-bottom:20px;
+      text-align:left;
+    }
+
+    .input-box label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+    }
+
+    .input-box input{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      outline:none;
+      font-size:16px;
+    }
+
+    .login-btn{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      background:white;
+      color:#0056d2;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+      margin-top:10px;
+    }
+
+    .login-btn:hover{
+      background:#dbeafe;
+      transform:scale(1.03);
+    }
+
+    .extra-links{
+      margin-top:20px;
+      display:flex;
+      justify-content:space-between;
+      font-size:14px;
+    }
+
+    .extra-links a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .extra-links a:hover{
+      text-decoration:underline;
+    }
+
+    .logo{
+      font-size:55px;
+      margin-bottom:15px;
+    }
+
+    @media(max-width:500px){
+
+      .login-box{
+        width:90%;
+        padding:30px;
+      }
+
+      .login-box h1{
+        font-size:34px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Background -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Login Box -->
+  <div class="login-box">
+
+    <div class="logo">🎓</div>
+
+    <h1>EduIndia</h1>
+
+    <p>Learn, Share & Grow Together</p>
+
+    <form action="login.php" method="POST">
+      <div class="input-box">
+        <label>Email Address</label>
+
+        <input type="email" name="email"placeholder="Enter your email">
+      </div>
+
+      <div class="input-box">
+        <label>Password</label>
+
+        <input type="password" name="password" placeholder="Enter your password">
+      </div>
+
+      <button class="login-btn">
+        Login
+      </button>
+
+    </form>
+
+    <div class="extra-links">
+
+      <a href="#">Forgot Password?</a>
+
+      <a href="register.html">Create Account</a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

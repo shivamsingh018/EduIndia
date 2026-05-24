@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Academic Subjects - EduIndia</title>
+
+  <style>
+
+    body{
+      margin:0;
+      padding:0;
+      font-family:Arial,sans-serif;
+      background:#eef5ff;
+    }
+
+    h1{
+      text-align:center;
+      color:#0056d2;
+      margin-top:40px;
+      font-size:50px;
+    }
+
+    p{
+      text-align:center;
+      color:#555;
+      font-size:20px;
+      margin-bottom:50px;
+    }
+
+    .course-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      padding:40px 60px;
+    }
+
+    .course-card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .course-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .course-card h3{
+      color:#0056d2;
+      margin-bottom:15px;
+    }
+
+    .course-card button{
+      margin-top:20px;
+      padding:12px 20px;
+      background:#0056d2;
+      color:white;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      width:100%;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Academic Subjects</h1>
+
+  <p>Subjects available for Class 8 to 12 students</p>
+
+  <div class="course-grid">
+
+    <div class="course-card">
+      <h3>Mathematics</h3>
+      <p>
+        Algebra, Geometry, Trigonometry and Calculus for school students.
+      </p>
+      <button>Start Learning</button>
+    </div>
+
+    <div class="course-card">
+      <h3>Science</h3>
+      <p>
+        Physics, Chemistry and Biology concepts with practical examples.
+      </p>
+      <button>Start Learning</button>
+    </div>
+
+    <div class="course-card">
+      <h3>English</h3>
+      <p>
+        Grammar, literature and communication skills improvement.
+      </p>
+      <button>Start Learning</button>
+    </div>
+
+    <div class="course-card">
+      <h3>Social Science</h3>
+      <p>
+        History, Geography, Civics and Economics preparation.
+      </p>
+      <button>Start Learning</button>
+    </div>
+
+    <div class="course-card">
+      <h3>Computer Science</h3>
+      <p>
+        Learn programming, HTML, MS Office and computer basics.
+      </p>
+      <button>Start Learning</button>
+    </div>
+
+    <div class="course-card">
+      <h3>Reasoning & Aptitude</h3>
+      <p>
+        Improve logical thinking and aptitude for competitive exams.
+      </p>
+      <button>Start Learning</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

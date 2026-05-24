@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduIndia Career AI</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-8 py-4 flex justify-between items-center">
+
+        <h1 class="text-3xl font-bold text-blue-950">
+            EduIndia Career AI
+        </h1>
+
+        <a href="new.html"
+        class="bg-orange-500 text-white px-5 py-2 rounded-lg hover:bg-orange-600 transition">
+            Back
+        </a>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-950 text-white py-20 px-8 text-center">
+
+        <h2 class="text-5xl font-extrabold leading-tight">
+            Discover Your <span class="text-orange-400">Future Career</span>
+        </h2>
+
+        <p class="mt-6 text-lg max-w-3xl mx-auto text-gray-300">
+            Get AI-powered career suggestions based on your interests,
+            skills, and goals. Explore technology, business, healthcare,
+            design, and many more career paths.
+        </p>
+
+        <button onclick="showCareer()"
+        class="mt-8 bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl text-lg font-bold shadow-lg transition">
+            <i class="fa-solid fa-robot mr-2"></i>
+            Start Career Analysis
+        </button>
+
+    </section>
+
+    <!-- Career Result -->
+    <!-- Career Form -->
+<section class="py-16 px-6">
+
+    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-10">
+
+        <h3 class="text-3xl font-bold text-center text-blue-950 mb-8">
+            Career AI Test
+        </h3>
+
+        <!-- Name -->
+        <div class="mb-6">
+            <label class="font-semibold block mb-2">
+                Your Name
+            </label>
+
+            <input type="text" id="name"
+            class="w-full border border-gray-300 rounded-lg p-3"
+            placeholder="Enter your name">
+        </div>
+
+        <!-- Interest -->
+        <div class="mb-6">
+            <label class="font-semibold block mb-2">
+                Select Your Interest
+            </label>
+
+            <select id="interest"
+            class="w-full border border-gray-300 rounded-lg p-3">
+
+                <option value="">Choose</option>
+                <option value="technology">Technology</option>
+                <option value="design">Design</option>
+                <option value="business">Business</option>
+                <option value="medical">Medical</option>
+
+            </select>
+        </div>
+
+        <!-- Button -->
+        <button onclick="showCareer()"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-bold transition">
+
+            Get Career Suggestion
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Career Result -->
+<section class="pb-20 px-6">
+
+    <div id="careerBox"
+    class="hidden max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-10 text-center">
+
+        <div class="text-6xl text-orange-500 mb-5">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+
+        <h3 class="text-4xl font-bold text-blue-950">
+            Hello <span id="userName"></span>
+        </h3>
+
+        <p class="text-gray-500 mt-3">
+            Your AI Career Recommendation is
+        </p>
+
+        <p id="careerResult"
+        class="text-5xl font-extrabold text-orange-500 mt-6">
+        </p>
+
+    </div>
+
+</section>
+
+<!-- JavaScript -->
+<script>
+
+function showCareer() {
+
+    let name = document.getElementById("name").value;
+    let interest = document.getElementById("interest").value;
+
+    let career = "";
+
+    if (interest === "technology") {
+        career = "Software Engineer";
+    }
+
+    else if (interest === "design") {
+        career = "UI/UX Designer";
+    }
+
+    else if (interest === "business") {
+        career = "Business Analyst";
+    }
+
+    else if (interest === "medical") {
+        career = "Doctor";
+    }
+
+    else {
+        career = "Please Select an Interest";
+    }
+
+    document.getElementById("careerBox")
+    .classList.remove("hidden");
+
+    document.getElementById("careerResult")
+    .innerText = career;
+
+    document.getElementById("userName")
+    .innerText = name;
+
+}
+
+</script>
+
+</body>
+</html>
